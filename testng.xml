@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" thread-count="3">
+
+	<listeners>
+	<listener class-name="resources.Listeners"/>
+	</listeners>
+
+  <test name="QAClickLogin">
+    <classes>
+      <class name="seleniumTests.QAClickLogin"/> 
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name="QAClickNavBarCheck">
+    <classes>
+      <class name="seleniumTests.QAClickNavBarCheck"/> 
+    </classes>
+  </test> <!-- Test -->
+  
+    <test name="QAClickCheckTitle">
+    <classes>
+      <class name="seleniumTests.QAClickCheckTitle"/> 
+    </classes>
+  </test> <!-- Test -->  
+  
+      <test name="QAClickForgotPwd">
+    <classes>
+      <class name="seleniumTests.QAClickForgotPwd"/> 
+    </classes>
+  </test>
+  
+  
+</suite> <!-- Suite -->
