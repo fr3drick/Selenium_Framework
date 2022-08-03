@@ -51,12 +51,12 @@ public class QAClickLogin extends Base {
 		QAClickLandingPage QAClandP = new QAClickLandingPage(driver);
 		log.info("page object is initialized");
 		
-//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(90));
-//		log.warn("explicitly wait for loginBtn to be clickable for 90s");
-//		
-//		wait.until(ExpectedConditions.elementToBeClickable(QAClandP.noThanksBtn()));
-//		log.info("explicitly wait until noThanksBtn is clickable");
-//		QAClandP.noThanksBtn().click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(90));
+		log.warn("explicitly wait for loginBtn to be clickable for 90s");
+		
+		wait.until(ExpectedConditions.elementToBeClickable(QAClandP.noThanksBtn()));
+		log.info("explicitly wait until noThanksBtn is clickable");
+		QAClandP.noThanksBtn().click();
 		
 		QAClickLoginPage QAClogin = QAClandP.login();
 		log.info("loginBtn is clicked");
