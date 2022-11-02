@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Web Automation Results</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Aug 3, 2022 03:21:38 AM</span></a>
+<a href="#"><span class="badge badge-primary">Oct 26, 2022 10:03:52 am</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -67,6 +72,7 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -74,32 +80,32 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="fail" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">QAClicklogin</p>
             <p class="text-sm">
-              <span>3:21:39 AM</span> / <span>00:00:25:119</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>10:03:54</span> / <span>00:00:23:355</span>
+              <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">QAClicklogin</h5>
-<span class='badge badge-success'>08.03.2022 3:21:39 AM</span>
-<span class='badge badge-danger'>08.03.2022 3:22:04 AM</span>
-<span class='badge badge-default'>00:00:25:119</span>
+<h5 class="test-status text-fail">QAClicklogin</h5>
+<span class='badge badge-success'>10.26.2022 10:03:54</span>
+<span class='badge badge-danger'>10.26.2022 10:04:17</span>
+<span class='badge badge-default'>00:00:23:355</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
 </div>
 </div>    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\iruborf\gitSpace\Selenium_Framework\reports\screenshots\QAClicklogin.png' src="C:\Users\iruborf\gitSpace\Selenium_Framework\reports\screenshots\QAClicklogin.png">
+<img data-featherlight='C:\Users\fredrick.irubor\git\Selenium_Framework\reports\screenshots\QAClicklogin.png' src="C:\Users\fredrick.irubor\git\Selenium_Framework\reports\screenshots\QAClicklogin.png">
     
     </div></div>
 <div class="detail-body mt-4">
@@ -107,10 +113,65 @@
   <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
   <tbody>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:22:04 AM</td>
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>10:04:17</td>
         <td>
-          Test passed
+          <textarea readonly class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[text()='NO THANKS']"}
+  (Session info: chrome=107.0.5304.63)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.1.4', revision: '535d840ee2'
+System info: host: 'FCMB-IT-L19014', ip: '192.168.0.131', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Command: [b10cef1ce1804404a1b54c4da046ab26, findElement {using=xpath, value=//button[text()='NO THANKS']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.63, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\sauce\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:49778}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: b10cef1ce1804404a1b54c4da046ab26
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+	at pageObjects.QAClickLandingPage.noThanksBtn(QAClickLandingPage.java:28)
+	at seleniumTests.QAClickLogin.QAClicklogin(QAClickLogin.java:57)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:806)
+	at org.testng.TestRunner.run(TestRunner.java:601)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:283)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:75)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:120)
+	at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
+</textarea>
+          
         </td>
       </tr>
   </tbody>
@@ -125,7 +186,7 @@
           <div class="test-detail">
             <p class="name">navBarCheck</p>
             <p class="text-sm">
-              <span>3:22:05 AM</span> / <span>00:00:12:399</span>
+              <span>10:04:18</span> / <span>00:00:14:191</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -134,16 +195,16 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">navBarCheck</h5>
-<span class='badge badge-success'>08.03.2022 3:22:05 AM</span>
-<span class='badge badge-danger'>08.03.2022 3:22:18 AM</span>
-<span class='badge badge-default'>00:00:12:399</span>
+<span class='badge badge-success'>10.26.2022 10:04:18</span>
+<span class='badge badge-danger'>10.26.2022 10:04:32</span>
+<span class='badge badge-default'>00:00:14:191</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
 </div>
 </div>    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\iruborf\gitSpace\Selenium_Framework\reports\screenshots\navBarCheck.png' src="C:\Users\iruborf\gitSpace\Selenium_Framework\reports\screenshots\navBarCheck.png">
+<img data-featherlight='C:\Users\fredrick.irubor\git\Selenium_Framework\reports\screenshots\navBarCheck.png' src="C:\Users\fredrick.irubor\git\Selenium_Framework\reports\screenshots\navBarCheck.png">
     
     </div></div>
 <div class="detail-body mt-4">
@@ -152,7 +213,7 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:22:18 AM</td>
+        <td>10:04:32</td>
         <td>
           Test passed
         </td>
@@ -169,7 +230,7 @@
           <div class="test-detail">
             <p class="name">checkTitle</p>
             <p class="text-sm">
-              <span>3:22:18 AM</span> / <span>00:00:10:383</span>
+              <span>10:04:33</span> / <span>00:00:14:026</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -178,16 +239,16 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">checkTitle</h5>
-<span class='badge badge-success'>08.03.2022 3:22:18 AM</span>
-<span class='badge badge-danger'>08.03.2022 3:22:28 AM</span>
-<span class='badge badge-default'>00:00:10:383</span>
+<span class='badge badge-success'>10.26.2022 10:04:33</span>
+<span class='badge badge-danger'>10.26.2022 10:04:47</span>
+<span class='badge badge-default'>00:00:14:026</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
 </div>
 </div>    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\iruborf\gitSpace\Selenium_Framework\reports\screenshots\checkTitle.png' src="C:\Users\iruborf\gitSpace\Selenium_Framework\reports\screenshots\checkTitle.png">
+<img data-featherlight='C:\Users\fredrick.irubor\git\Selenium_Framework\reports\screenshots\checkTitle.png' src="C:\Users\fredrick.irubor\git\Selenium_Framework\reports\screenshots\checkTitle.png">
     
     </div></div>
 <div class="detail-body mt-4">
@@ -196,7 +257,7 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:22:28 AM</td>
+        <td>10:04:47</td>
         <td>
           Test passed
         </td>
@@ -213,7 +274,7 @@
           <div class="test-detail">
             <p class="name">QAClickForgotPassword</p>
             <p class="text-sm">
-              <span>3:22:29 AM</span> / <span>00:00:14:009</span>
+              <span>10:04:47</span> / <span>00:00:18:482</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -222,16 +283,16 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">QAClickForgotPassword</h5>
-<span class='badge badge-success'>08.03.2022 3:22:29 AM</span>
-<span class='badge badge-danger'>08.03.2022 3:22:43 AM</span>
-<span class='badge badge-default'>00:00:14:009</span>
+<span class='badge badge-success'>10.26.2022 10:04:47</span>
+<span class='badge badge-danger'>10.26.2022 10:05:06</span>
+<span class='badge badge-default'>00:00:18:482</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
 </div>
 </div>    <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='C:\Users\iruborf\gitSpace\Selenium_Framework\reports\screenshots\QAClickForgotPassword.png' src="C:\Users\iruborf\gitSpace\Selenium_Framework\reports\screenshots\QAClickForgotPassword.png">
+<img data-featherlight='C:\Users\fredrick.irubor\git\Selenium_Framework\reports\screenshots\QAClickForgotPassword.png' src="C:\Users\fredrick.irubor\git\Selenium_Framework\reports\screenshots\QAClickForgotPassword.png">
     
     </div></div>
 <div class="detail-body mt-4">
@@ -240,7 +301,7 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:22:43 AM</td>
+        <td>10:05:06</td>
         <td>
           Test passed
         </td>
@@ -259,30 +320,79 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="container-fluid p-4 view dashboard-view">
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.NoSuchElementException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.NoSuchElementException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>10:03:54 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>QAClicklogin</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
 <div class="row">
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Aug 3, 2022 03:21:38 AM</h3>
+<h3>Oct 26, 2022 10:03:52 am</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Aug 3, 2022 03:22:43 AM</h3>
+<h3>Oct 26, 2022 10:05:06 am</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>4</h3>
+<h3>3</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
@@ -298,12 +408,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>4</b> tests passed
+<div><small data-tooltip='75%'>
+<b>3</b> tests passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
+<small data-tooltip='25%'><b>1</b> tests failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -321,9 +431,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>4</b> events passed</small></div>
+<div><small data-tooltip='75%'><b>3</b> events passed</small></div>
 <div>
-<small data-tooltip='0%'><b>0</b> events failed,
+<small data-tooltip='25%'><b>1</b> events failed,
 <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -340,7 +450,7 @@
 </div></div>
 <script>
 var timeline = {
-"QAClicklogin":25.119,"navBarCheck":12.399,"checkTitle":10.383,"QAClickForgotPassword":14.009
+"QAClicklogin":23.355,"navBarCheck":14.191,"checkTitle":14.026,"QAClickForgotPassword":18.482
 };
 </script>
 <div class="row">
@@ -363,8 +473,8 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 4,
-failParent: 0,
+passParent: 3,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
@@ -380,8 +490,8 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 4,
-failEvents: 0,
+passEvents: 3,
+failEvents: 1,
 warningEvents: 0,
 skipEvents: 0,
 infoEvents: 0

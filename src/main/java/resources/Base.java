@@ -6,6 +6,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 import java.util.Random;
 
@@ -74,12 +76,16 @@ public class Base {
 			}
 			else if(browserName.contains("remote"))
 			{
-				DesiredCapabilities caps = new DesiredCapabilities();
-				if(browserName.contains("remotee")) caps.setBrowserName("MicrosoftEdge");
-				else if(browserName.contains("remotec")) caps.setBrowserName("chrome");
-				else {caps.setBrowserName("chrome");}
-				caps.setCapability(CapabilityType.ACCEPT_INSECURE_CERTS, true);
-				driver = new RemoteWebDriver(new URL(prop.getProperty("hub")+":4444"), caps);
+				ChromeOptions browserOptions = new ChromeOptions();
+				browserOptions.setPlatformName("Windows 10");
+				browserOptions.setBrowserVersion("latest");
+				Map<String, Object> sauceOptions = new HashMap<>();
+				sauceOptions.put("build", "1.0");
+				sauceOptions.put("name", "E2E Framework");
+				browserOptions.setCapability("sauce:options", sauceOptions);
+
+				URL url = new URL("https://oauth-fredrickirubor-e8012:23138aef-0998-4d9a-86ac-99eb9d95a212@ondemand.eu-central-1.saucelabs.com:443/wd/hub");
+				driver = new RemoteWebDriver(url, browserOptions);
 			}
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
