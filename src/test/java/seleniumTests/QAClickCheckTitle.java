@@ -30,6 +30,8 @@ public class QAClickCheckTitle extends Base {
 		QAClickLandingPage QAClandP = new QAClickLandingPage(driver);
 		System.out.println(QAClandP.navBarLinks().get(0).getText());
 		
+	//	takeScreenshot(driver);
+		
 		Assert.assertTrue(driver.getTitle().contains("a"),"title not validated");
 		log.info("page title is validated ok");
 	
