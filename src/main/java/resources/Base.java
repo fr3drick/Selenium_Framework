@@ -19,6 +19,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.manager.SeleniumManager;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -36,7 +37,9 @@ public class Base {
 	
 		public WebDriver initializeBrowser() throws IOException {
 		
-		WebDriverManager.chromedriver().setup();
+		SeleniumManager.getInstance();
+		
+//		WebDriverManager.chromedriver().setup();
 		
 		prop = new Properties();
 		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\data.properties");
@@ -76,16 +79,7 @@ public class Base {
 			}
 			else if(browserName.contains("remote"))
 			{
-				ChromeOptions browserOptions = new ChromeOptions();
-				browserOptions.setPlatformName("Windows 10");
-				browserOptions.setBrowserVersion("latest");
-				Map<String, Object> sauceOptions = new HashMap<>();
-				sauceOptions.put("build", "1.0");
-				sauceOptions.put("name", "E2E Framework");
-				browserOptions.setCapability("sauce:options", sauceOptions);
 
-				URL url = new URL("https://oauth-fredrickirubor-e8012:23138aef-0998-4d9a-86ac-99eb9d95a212@ondemand.eu-central-1.saucelabs.com:443/wd/hub");
-				driver = new RemoteWebDriver(url, browserOptions);
 			}
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
