@@ -38,7 +38,8 @@ public class Base {
 		public WebDriver initializeBrowser() throws IOException {
 		
 		SeleniumManager.getInstance();
-		
+			
+//		SeleniumManager handles webDriver management internally, no need for wdm		
 //		WebDriverManager.chromedriver().setup();
 		
 		prop = new Properties();
