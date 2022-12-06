@@ -39,14 +39,14 @@ public class Base {
 		
 		SeleniumManager.getInstance();
 			
-//		SeleniumManager handles webDriver management internally, no need for wdm		
-//		WebDriverManager.chromedriver().setup();
+		// SeleniumManager handles webDriver management internally, no need for wdm		
+		// WebDriverManager.chromedriver().setup();
 		
 		prop = new Properties();
-		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\data.properties");
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"/src/main/java/resources/data.properties");
 		//load path to properties file into properties object
 		prop.load(fis);
-//		String browserName="";
+
 		if(System.getProperty("browser")!=null) 
 		{
 			browserName = System.getProperty("browser");
@@ -80,7 +80,16 @@ public class Base {
 			}
 			else if(browserName.contains("remote"))
 			{
+							ChromeOptions browserOptions = new ChromeOptions();
+			browserOptions.setPlatformName("Windows 10");
+			browserOptions.setBrowserVersion("latest");
+			Map<String, Object> sauceOptions = new HashMap<>();
+			sauceOptions.put("build", "build001");
+			sauceOptions.put("name", "testFromCodeSpace");
+			browserOptions.setCapability("sauce:options", sauceOptions);
 
+			URL url = new URL("https://fr3do:2e07255f-ce0a-4c65-81e8-79a400398bcb@ondemand.eu-central-1.saucelabs.com:443/wd/hub");
+			 driver = new RemoteWebDriver(url, browserOptions);
 			}
 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
@@ -93,7 +102,7 @@ public class Base {
 	
 	public String getURL(String urlKey) throws IOException {
 	Properties prop = new Properties();
-	FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\data.properties");
+	FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"/src/main/java/resources/data.properties");
 	//load path to properties file into properties object
 	prop.load(fis);
 	return prop.getProperty(urlKey);
@@ -105,7 +114,7 @@ public class Base {
 	{
 		
 		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		String path = System.getProperty("user.dir")+"\\reports\\screenshots\\"+testMethodName+".png";
+		String path = System.getProperty("user.dir")+"/reports/screenshots/"+testMethodName+".png";
 		FileUtils.copyFile(src, new File(path));
 		
 	}
@@ -116,7 +125,7 @@ public class Base {
 		Random rand = new Random();
 		
 		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		String path = System.getProperty("user.dir")+"\\screenshots\\error"+rand.nextInt(100)+".png";
+		String path = System.getProperty("user.dir")+"/screenshots/error"+rand.nextInt(100)+".png";
 		FileUtils.copyFile(src, new File(path));
 		
 	}
