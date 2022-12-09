@@ -3,6 +3,7 @@ package resources;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.time.Duration;
@@ -35,7 +36,7 @@ public class Base {
 	public String browserName="";
 
 	
-		public WebDriver initializeBrowser() throws IOException {
+		public WebDriver initializeBrowser()  {
 		
 		SeleniumManager.getInstance();
 			
@@ -43,10 +44,32 @@ public class Base {
 //		WebDriverManager.chromedriver().setup();
 		
 		prop = new Properties();
+		
+		try
+		{
 		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\data.properties");
 		//load path to properties file into properties object
 		prop.load(fis);
+		}
+		catch(FileNotFoundException e)
+		{
+			System.out.println("FIS class cannot reach properties file, check file system\n"		
+		+ "However browser has been defaulted to chromeheadless");
+			prop.setProperty("browser", "chromeheadless");
+			
+		}
+		catch(IOException e)
+		{
+			System.out.println("FIS cannot load properties file, check file system access\n"
+					+ "However browser has been defaulted to chromeheadless");
+			prop.setProperty("browser", "chromeheadless");
+		}
+		
+		
+		
 //		String browserName="";
+		
+// 		System.getProperty("browser") allows tester to specify the browser to be used directly on the Maven CLI
 		if(System.getProperty("browser")!=null) 
 		{
 			browserName = System.getProperty("browser");
@@ -91,33 +114,72 @@ public class Base {
 		
 	}
 	
-	public String getURL(String urlKey) throws IOException {
+	public String getURL(String urlKey) {
 	Properties prop = new Properties();
-	FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\data.properties");
-	//load path to properties file into properties object
+	FileInputStream fis;
+	try
+	{
+	
+	fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\resources\\data.properties");
 	prop.load(fis);
+	}
+	catch(FileNotFoundException e)
+	{
+		System.out.println("FIS class cannot reach properties file, check file system");
+		
+	}
+	catch(IOException e)
+	{
+		System.out.println("FIS cannot load properties file, check file system access");
+	}
+	//load path to properties file into properties object
+	
 	return prop.getProperty(urlKey);
 	
 	
 	}
 	
-	public void takeScreenshot(String testMethodName, WebDriver driver) throws IOException
+	public void takeScreenshot(String testMethodName, WebDriver driver)
 	{
-		
+		try {
 		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		String path = System.getProperty("user.dir")+"\\reports\\screenshots\\"+testMethodName+".png";
 		FileUtils.copyFile(src, new File(path));
+		}
+		catch(NullPointerException e)
+		{
+			System.out.println("cannot take screenshot as driver is null");
+			
+		} catch (IOException e) {
+			
+			System.out.println("IO exception while saving screenshot");
+			e.printStackTrace();
+		}
+
 		
 	}
 	
 
-	public void takeScreenshot(WebDriver driver) throws IOException //overloading the takeScreenshot method, this can be used freely
+	public void takeScreenshot(WebDriver driver) //overloading the takeScreenshot method, this can be used freely
 	{
-		Random rand = new Random();
+		try
+		{
+			Random rand = new Random();
 		
 		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		String path = System.getProperty("user.dir")+"\\screenshots\\error"+rand.nextInt(100)+".png";
 		FileUtils.copyFile(src, new File(path));
+		}
+		
+		catch(NullPointerException e)
+		{
+			System.out.println("cannot take screenshot as driver is null");
+			
+		} catch (IOException e) {
+			
+			System.out.println("IO exception while saving screenshot");
+			e.printStackTrace();
+		}
 		
 	}
 	

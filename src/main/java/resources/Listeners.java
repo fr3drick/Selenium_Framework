@@ -1,7 +1,5 @@
 package resources;
 
-import java.io.IOException;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -35,12 +33,7 @@ public class Listeners extends Base implements ITestListener {
 				e.printStackTrace();
 			}
 			
-			  try {
-				takeScreenshot(testMethodName, driver);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			  takeScreenshot(testMethodName, driver);
 			  
 			  test.addScreenCaptureFromPath(System.getProperty("user.dir")+"\\reports\\screenshots\\"+testMethodName+".png");
 			  test.log(Status.FAIL, result.getThrowable());
@@ -88,12 +81,7 @@ public class Listeners extends Base implements ITestListener {
 				e.printStackTrace();
 			}
 			
-			  try {
-				takeScreenshot(testMethodName, driver);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			  takeScreenshot(testMethodName, driver);
 			  
 			  test.addScreenCaptureFromPath(System.getProperty("user.dir")+"\\reports\\screenshots\\"+testMethodName+".png");
 			

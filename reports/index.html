@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Web Automation Results</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Oct 26, 2022 10:03:52 am</span></a>
+<a href="#"><span class="badge badge-primary">Dec 9, 2022 11:34:18 am</span></a>
 </li>
 </ul>
 </div>
@@ -87,7 +87,7 @@
           <div class="test-detail">
             <p class="name">QAClicklogin</p>
             <p class="text-sm">
-              <span>10:03:54</span> / <span>00:00:23:355</span>
+              <span>11:34:20</span> / <span>00:00:21:429</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -96,9 +96,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-fail">QAClicklogin</h5>
-<span class='badge badge-success'>10.26.2022 10:03:54</span>
-<span class='badge badge-danger'>10.26.2022 10:04:17</span>
-<span class='badge badge-default'>00:00:23:355</span>
+<span class='badge badge-success'>12.09.2022 11:34:20</span>
+<span class='badge badge-danger'>12.09.2022 11:34:42</span>
+<span class='badge badge-default'>00:00:21:429</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -114,34 +114,35 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log fail-bg">Fail</span></td>
-        <td>10:04:17</td>
+        <td>11:34:42</td>
         <td>
           <textarea readonly class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[text()='NO THANKS']"}
-  (Session info: chrome=107.0.5304.63)
+  (Session info: headless chrome=108.0.5359.73)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
-Build info: version: '4.1.4', revision: '535d840ee2'
-System info: host: 'FCMB-IT-L19014', ip: '192.168.0.131', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '18.0.2.1'
-Driver info: org.openqa.selenium.remote.RemoteWebDriver
-Command: [b10cef1ce1804404a1b54c4da046ab26, findElement {using=xpath, value=//button[text()='NO THANKS']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 107.0.5304.63, chrome: {chromedriverVersion: 107.0.5304.62 (1eec40d3a576..., userDataDir: C:\Users\sauce\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:49778}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: b10cef1ce1804404a1b54c4da046ab26
+Build info: version: '4.6.0', revision: '79f1c02ae20'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [57a10d881d80c7b6474b407b0d4d6e74, findElement {using=xpath, value=//button[text()='NO THANKS']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 108.0.5359.73, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\FREDRI~1.IRU\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:59496}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59496/devtoo..., se:cdpVersion: 108.0.5359.73, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 57a10d881d80c7b6474b407b0d4d6e74
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.TracedCommandExecutor.execute(TracedCommandExecutor.java:51)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:567)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:541)
 	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:385)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:377)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:365)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:357)
 	at pageObjects.QAClickLandingPage.noThanksBtn(QAClickLandingPage.java:28)
 	at seleniumTests.QAClickLogin.QAClicklogin(QAClickLogin.java:57)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
 	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
@@ -186,7 +187,7 @@ Session ID: b10cef1ce1804404a1b54c4da046ab26
           <div class="test-detail">
             <p class="name">navBarCheck</p>
             <p class="text-sm">
-              <span>10:04:18</span> / <span>00:00:14:191</span>
+              <span>11:34:43</span> / <span>00:00:09:978</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -195,9 +196,9 @@ Session ID: b10cef1ce1804404a1b54c4da046ab26
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">navBarCheck</h5>
-<span class='badge badge-success'>10.26.2022 10:04:18</span>
-<span class='badge badge-danger'>10.26.2022 10:04:32</span>
-<span class='badge badge-default'>00:00:14:191</span>
+<span class='badge badge-success'>12.09.2022 11:34:43</span>
+<span class='badge badge-danger'>12.09.2022 11:34:53</span>
+<span class='badge badge-default'>00:00:09:978</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -213,7 +214,7 @@ Session ID: b10cef1ce1804404a1b54c4da046ab26
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>10:04:32</td>
+        <td>11:34:53</td>
         <td>
           Test passed
         </td>
@@ -230,7 +231,7 @@ Session ID: b10cef1ce1804404a1b54c4da046ab26
           <div class="test-detail">
             <p class="name">checkTitle</p>
             <p class="text-sm">
-              <span>10:04:33</span> / <span>00:00:14:026</span>
+              <span>11:34:53</span> / <span>00:00:09:650</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -239,9 +240,9 @@ Session ID: b10cef1ce1804404a1b54c4da046ab26
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">checkTitle</h5>
-<span class='badge badge-success'>10.26.2022 10:04:33</span>
-<span class='badge badge-danger'>10.26.2022 10:04:47</span>
-<span class='badge badge-default'>00:00:14:026</span>
+<span class='badge badge-success'>12.09.2022 11:34:53</span>
+<span class='badge badge-danger'>12.09.2022 11:35:03</span>
+<span class='badge badge-default'>00:00:09:650</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -257,7 +258,7 @@ Session ID: b10cef1ce1804404a1b54c4da046ab26
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>10:04:47</td>
+        <td>11:35:03</td>
         <td>
           Test passed
         </td>
@@ -274,7 +275,7 @@ Session ID: b10cef1ce1804404a1b54c4da046ab26
           <div class="test-detail">
             <p class="name">QAClickForgotPassword</p>
             <p class="text-sm">
-              <span>10:04:47</span> / <span>00:00:18:482</span>
+              <span>11:35:03</span> / <span>00:00:12:758</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -283,9 +284,9 @@ Session ID: b10cef1ce1804404a1b54c4da046ab26
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">QAClickForgotPassword</h5>
-<span class='badge badge-success'>10.26.2022 10:04:47</span>
-<span class='badge badge-danger'>10.26.2022 10:05:06</span>
-<span class='badge badge-default'>00:00:18:482</span>
+<span class='badge badge-success'>12.09.2022 11:35:03</span>
+<span class='badge badge-danger'>12.09.2022 11:35:16</span>
+<span class='badge badge-default'>00:00:12:758</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -301,7 +302,7 @@ Session ID: b10cef1ce1804404a1b54c4da046ab26
   <tbody>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>10:05:06</td>
+        <td>11:35:16</td>
         <td>
           Test passed
         </td>
@@ -352,7 +353,7 @@ Session ID: b10cef1ce1804404a1b54c4da046ab26
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>10:03:54 am</td>
+<td>11:34:20 am</td>
 <td>
 <a href="#" class="linked" test-id='1' id='1'>QAClicklogin</a>
 </td>
@@ -374,13 +375,13 @@ Session ID: b10cef1ce1804404a1b54c4da046ab26
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Oct 26, 2022 10:03:52 am</h3>
+<h3>Dec 9, 2022 11:34:18 am</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Oct 26, 2022 10:05:06 am</h3>
+<h3>Dec 9, 2022 11:35:16 am</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -450,7 +451,7 @@ Session ID: b10cef1ce1804404a1b54c4da046ab26
 </div></div>
 <script>
 var timeline = {
-"QAClicklogin":23.355,"navBarCheck":14.191,"checkTitle":14.026,"QAClickForgotPassword":18.482
+"QAClicklogin":21.429,"navBarCheck":9.978,"checkTitle":9.65,"QAClickForgotPassword":12.758
 };
 </script>
 <div class="row">
