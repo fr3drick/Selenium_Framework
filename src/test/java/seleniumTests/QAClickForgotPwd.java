@@ -53,7 +53,7 @@ public class QAClickForgotPwd extends Base {
 		
 //		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(90));
 //		log.warn("explicitly wait for loginBtn to be clickable for 90s");
-//		
+		
 //		wait.until(ExpectedConditions.elementToBeClickable(QAClandP.noThanksBtn()));
 //		log.info("explicitly wait until noThanksBtn is clickable");
 //		QAClandP.noThanksBtn().click();
@@ -91,7 +91,10 @@ public class QAClickForgotPwd extends Base {
 	
 	@AfterTest
 	public void cleanUp() {
-		driver.quit();
+		if(driver != null)
+		{
+			driver.quit();
+		}
 	}
 
 

@@ -42,7 +42,10 @@ public class QAClickNavBarCheck extends Base{
 	
 	@AfterTest
 	public void cleanUp() {
-		driver.quit();
+		if(driver != null)
+		{
+			driver.quit();
+		}
 	}
 
 }

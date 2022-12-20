@@ -10,7 +10,7 @@
     <classes>
       <class name="seleniumTests.QAClickLogin"/> 
     </classes>
-  </test> <!-- Test -->
+  </test> 
   
   <test name="QAClickNavBarCheck">
     <classes>

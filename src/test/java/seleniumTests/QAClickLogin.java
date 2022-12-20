@@ -37,7 +37,7 @@ public class QAClickLogin extends Base {
 
 	}
 	
-	@Test(dataProvider="getData", enabled=true, groups="QAClick")
+	@Test(dataProvider="getData", enabled=false, groups="QAClick")
 	public void QAClicklogin(String user, String password) throws IOException
 	{
 		driver = initializeBrowser();
@@ -89,7 +89,10 @@ public class QAClickLogin extends Base {
 	
 	@AfterTest
 	public void cleanUp() {
-		driver.quit();
+		if(driver != null)
+		{
+			driver.quit();
+		}
 	}
 	
 

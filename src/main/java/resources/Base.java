@@ -31,6 +31,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Base {
 
+	
+	
 	public WebDriver driver;
 	public Properties prop;
 	public String browserName="";
@@ -109,6 +111,7 @@ public class Base {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.manage().window().maximize();
 		
+				
 		return driver;
 		
 		
