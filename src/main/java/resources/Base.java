@@ -87,6 +87,8 @@ public class Base {
 			{
 				ChromeOptions options = new ChromeOptions();
 				options.setAcceptInsecureCerts(true);
+				options.addArguments("--remote-allow-origins=*");
+				
 				if(browserName.contains("headless")) options.addArguments("--headless");
 				driver = new ChromeDriver(options);
 			}
@@ -98,6 +100,7 @@ public class Base {
 			{
 				EdgeOptions options = new EdgeOptions();
 				options.setAcceptInsecureCerts(true);
+				options.addArguments("--remote-allow-origins=*");
 				
 				if(browserName.contains("headless")) options.addArguments("--headless");
 	
